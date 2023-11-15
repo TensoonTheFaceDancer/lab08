@@ -1,8 +1,11 @@
 package it.unibo.mvc;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -35,11 +38,38 @@ public class MiniGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
          * Handlers
-         */
+         * ! Commented to complete part 3 of the assignment
+         
+         write.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(final ActionEvent e) {
+                 System.out.println(randomGenerator.nextInt());
+                }
+            });
+        */
+            
+            
+        //PART 1
+        //Create a new panel, set it as the only element in the middle of the previous one, and move the button in it
+        final JPanel myPanel = new JPanel();
+        myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
+        canvas.remove(write);
+        canvas.add(myPanel, BorderLayout.CENTER);
+        myPanel.add(write);
+
+        //PART 2
+        //Create a new text field labelled "Result". and put it inside the first panel on top of the second one
+        final JTextField myTextField = new JTextField("Result");
+        canvas.add(myTextField, BorderLayout.NORTH);
+
+        //PART 3
+        //Make it so that the random number printed by the button is written in the text field
         write.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                System.out.println(randomGenerator.nextInt());
+                final Integer out = randomGenerator.nextInt();
+                myTextField.setText(String.valueOf(out));
+                System.out.println(out);
             }
         });
     }

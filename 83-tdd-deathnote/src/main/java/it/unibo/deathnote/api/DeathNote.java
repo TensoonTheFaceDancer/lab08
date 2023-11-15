@@ -114,7 +114,7 @@ public interface DeathNote {
      * @param name the name of the person whose death cause to return
      * @return the death cause of the person with the given name.
      * If the cause of death is not specified, the method will return "heart attack".
-     * @throws IllegalArgumentException if the provider name is not written in this DeathNote
+     * @throws IllegalArgumentException if the provided name is not written in this DeathNote
      */
     String getDeathCause(String name);
 
@@ -122,7 +122,7 @@ public interface DeathNote {
      * @param name the name of the person whose death cause to return
      * @return the death details of the person with the given name,
      * or an empty string if no details have been provided.
-     * @throws IllegalArgumentException if the provider name is not written in this DeathNote.
+     * @throws IllegalArgumentException if the provided name is not written in this DeathNote.
      */
     String getDeathDetails(String name);
 
