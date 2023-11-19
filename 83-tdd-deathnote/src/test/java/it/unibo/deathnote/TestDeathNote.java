@@ -13,6 +13,7 @@ class TestDeathNote {
 
     public static final String LIGHT = "Light";
     public static final String MISA = "Misa";
+    
     public static final String NEAR = "Near";
 
     private DeathNoteImpl myDeathNote;
