@@ -23,10 +23,10 @@ public class DeathNoteImpl implements DeathNote {
 
     @Override
     public String getRule(int ruleNumber) throws IllegalArgumentException {
-        if(ruleNumber < 0) {
+        if(ruleNumber < 1 || ruleNumber > RULES.size()) {
             throw new IllegalArgumentException("Rules range from to " + DeathNote.RULES.size());
         }
-        return DeathNote.RULES.get(ruleNumber);
+        return RULES.get(ruleNumber - 1);
     }
 
     @Override
